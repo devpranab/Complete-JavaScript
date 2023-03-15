@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <!-- skeleton cdn -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"/>
+</head>
+<body>
+    
+   <div class="container1">
+    <button id="click-btn">Click-btn</button>
+   </div>
+
+<div class="container2">
+    <form action="">
+<input type="text" id="name">
+    </form>
+    <p id="demo">
+        
+    </p>
+</div>
+
+    <script>
+//More events
+/*
+document.querySelector(".container1").addEventListener("click", smsClick);
+document.querySelector(".container1").style.background = "red";
+
+function smsClick(e){ //this parameter indicate info of event
+    let val = 0;
+    val = e.target; //or this - same indication
+    val = e.target.id;
+    val = e.type; //which type of event
+    val = e.timeStamp; //when clicked
+    val = e.clientY; //user clicked by how many px(position of cursor) from full docs
+    val = e.clientX; //user clicked by how many px(position of cursor)
+    val = e.offset;
+    val = e.offsetX; //user clicked by how many px(position of cursor) from element area
+    val = e.offsetY;
+    val = this;
+    this.style.background = `#${e.offsetX}` //different hex color
+
+    console.log(val);
+}
+
+//We can use event also div, not only button
+/*
+document.querySelector("#name").addEventListener("focus", test);
+document.querySelector("#name").addEventListener("keyup", test2);
+
+function test(e){
+    console.log("focus done");
+    this.style.background = "pink";
+}
+
+function test2(e){
+    console.log(this.value);
+    document.getElementById("demo").innerText = this.value;
+}
+*/
+    </script>
+</body>
+</html>

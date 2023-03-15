@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h3 class="doc-title topic">Explore DOM</h1>
+        <h5 class="topic">Some Random Contents</h3>
+        <ol>
+            <li>Javascript</li>
+            <li>Python</li>
+            <li>PHP</li>
+        </ol>
+        <hr>
+        <ul>
+            <li><a class="g-link" href="#">google</a></li>
+            <li><a href="#">youtube</a></li>
+            <li><a href="#">facebook</a></li>
+            <li><a href="#">linkedin</a></li>
+        </ul>
+        <hr>
+        <form action="insert.php" method="post">
+           <label for="name">Name</label>
+           <input type="text" name="name" id="name">
+           <label for="phn">Phone No</label>
+           <input type="text" name="phn" id="phn">
+           <label for="email">Email</label>
+           <input type="email" name="email" id="email">
+        </form>
+        <hr>
+        <div class="img-div">
+            <img src="" alt="">
+        </div>
+    </div>
+
+    <script>
+        //DOM - Document Object Model - which communicate with Html dom(tree of Nodes)
+//The HTML DOM Tree of Objects
+//DOM methods are actions
+//DOM properties are values
+
+/*
+let val;
+val = this; //whole document
+val = window; //whole document
+val = window.document;
+val = document;
+val = document.documentElement;
+val = document.all;
+val = document.all[0];
+val = document.all[1];
+val = document.all[2];
+val = document.all[3];
+val = document.all.length;
+val = document.title;
+val = document.head;
+val = document.body;
+val = document.body.firstChild;
+val = document.body.firstElementChild;
+val = document.querySelector(".two");
+val = document.body.childNodes;
+val = document.body.hasChildNodes;
+val = document.body.children;
+val = document.body.parentNode/Element;
+val = document.doctype;
+val = document.URL;
+val = document.domain;
+val = document.characterSet;
+val = document.contentType;
+val = document.forms;
+val = document.forms[0];
+val = document.forms[1];
+val = document.forms[0].method;
+val = document.forms[0].action;
+val = document.links;
+val = document.links[0];
+val = document.links[1];
+val = document.links[2];
+val = document.links[0].href;
+val = document.links[0].className;
+val = document.links[0].classList;
+val = document.images;
+val = document.scripts;
+val = document.scripts[0];
+val = document.scripts[1];
+val = document.scripts[2];
+val = document.scripts[0].src;
+val = document.scripts[0].getAttribute("src");
+val = document.scri;
+val = document.readyState;
+val = document.referrer;
+console.log(val);
+
+//iteration of document all links
+// first convert array because of forEach f() works with array only
+links = document.links;
+let linkArray = Array.from(links);
+linkArray.forEach(function(link){
+console.log(link);
+});
+console.log(links);
+*/
+
+/*
+Changing HTML Elements
+Property	Description
+element.innerHTML =  new html content	Change the inner HTML of an element
+element.attribute = new value	Change the attribute value of an HTML element
+element.style.property = new style	Change the style of an HTML element
+Method	Description
+element.setAttribute(attribute, value)	Change the attribute value of an HTML element
+*/
+
+/*
+Adding and Deleting Elements
+Method	Description
+document.createElement(element)	Create an HTML element
+document.removeChild(element)	Remove an HTML element
+document.appendChild(element)	Add an HTML element
+document.replaceChild(new, old)	Replace an HTML element
+document.write(text)	Write into the HTML output stream
+*/
+
+/*
+document.getElementById(id).onclick = function(){code}	Adding event handler code to an onclick event
+*/
+    </script>
+</body>
+</html>

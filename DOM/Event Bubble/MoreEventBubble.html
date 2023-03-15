@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>more_event_bubble</title>
+     <!-- skeleton cdn -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"/>
+</head>
+<body>
+    <!-- Event delegate and purpose of Event bubble,
+    why we learnt event bubble concepts -->
+    
+<div id="mid-content" class="container">
+    <h4>More Event Bubble Practice</h4>
+    <h6>MY LISTS:</h6>
+    <ul id="myList">
+        <li id="first" class="item">Item one</li>
+        <li class="item">Item two</li>
+        <li class="item">Item three</li>
+        <li class="item">Item four</li>
+        <li class="item">Item five</li>
+    </ul>
+    <button id="addbtn">Add new item</button>
+</div>
+
+
+<script>
+//target and remove
+/*
+let items = document.getElementsByClassName("item");
+
+for(let i = 0; i<items.length; i++){
+    let item = items[i];
+    item.addEventListener("click", function(e){
+        //console.log(this); //this element comes
+        //console.log(this, e.target); //this element comes
+        //console.log(this, e.target.innerText);
+        //console.log(this, e.target.parentNode);
+        //e.target.parentNode.removeChild(e.target);
+    })
+}
+*/
+
+//or
+//use trick of event bubble, this does solove no removing "New item add" problem
+document.getElementById("myList").addEventListener("click", function(e){
+    //console.log(this, e.target);
+    e.target.parentNode.removeChild(e.target);
+
+})
+//add new item
+document.getElementById("addbtn").addEventListener("click", function(e){
+    let itemsParent = document.getElementById("myList");
+    let newItem = document.createElement("li");
+    newItem.innerText = "New item add";
+    itemsParent.appendChild(newItem);
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loadData</title>
+</head>
+<body>
+    <h2>Load data, using fetch api from JSON Placeholder</h2>
+    <div class="loadData">
+        <ul id="ul-content"></ul>
+    </div>
+
+    <script>
+    /*
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(json => loadData(json))
+
+        function loadData(users){
+            const userNames = users.map(user => user.username);
+            for(let i=0; i<userNames.length; i++){
+                const username = userNames[i];
+                const li = document.createElement("li");
+                li.innerText = username;
+                const ul = document.getElementById("ul-content");
+                ul.appendChild(li);
+            }
+        }
+        */
+    //error handling 
+    //200 ok
+    //400 bad req.
+    //404 not found
+    //HTTP request, Status code, network tab, bad API - check Network tab
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(json => loadData(json))
+    .catch(error => console.log(error));
+
+        function loadData(users){
+            const userNames = users.map(user => user.username);
+            for(let i=0; i<userNames.length; i++){
+                const username = userNames[i];
+                const li = document.createElement("li");
+                li.innerText = username;
+                const ul = document.getElementById("ul-content");
+                ul.appendChild(li);
+            }
+        }
+    </script>
+</body>
+</html>

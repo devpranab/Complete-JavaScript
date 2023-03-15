@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users API</title>
+    <style>
+        body{
+            padding: 5px 30px;
+        }
+        .users{
+            color: royalblue;
+        }
+    </style>
+</head>
+<body>
+    <!-- Users API, Dynamic nested API and display multiple data from API -->
+    <h3>Random Users</h3>
+    <input type="text" name="" id="userCount"><button id="loadUsers">Load-Users</button>
+    <div id="usersContent"></div>
+    <hr>
+    <h3>Users Detail</h3>
+    <div id="usersDetail"></div>
+
+    <script>
+    document.getElementById("loadUsers").addEventListener("click", function(){
+        const userCount = document.getElementById("userCount").value;
+        const count = parseInt(userCount);
+        //console.log(userCount);
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(data => {
+        data = data.slice(0, count);
+        const usersContent = document.getElementById("usersContent");
+        usersContent.innerHTML = ""; //empty before loop
+        for(let i = 0; i < data.length; i++){
+        const user = data[i];
+        //console.log(user);
+
+        const p = document.createElement("p");
+        p.innerHTML = `<p class="users">Name: <span>${user.name}</span> <button onClick="getUsersDetails(${user.id})">details${user.id}</button></p>`;
+        usersContent.appendChild(p);
+        }
+    })
+    })
+
+
+
+    function getUsersDetails(userId){
+    fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        const detail = document.getElementById("usersDetail");
+        detail.innerHTML = `<p>user id: ${data.id}</p>
+                            <h3>user name: ${data.name}</h3> 
+                            <p>user email: ${data.email}</p>
+                            <i>user address: ${data.address.street}, ${data.address.suite}, ${data.address.city}, ${data.address.zipcode}</i>
+                            <p>user website: ${data.website}</p>`;
+    })
+    }
+    </script>
+
+</body>
+</html>

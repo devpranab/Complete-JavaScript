@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- skeleton cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeletomin.css"/>
+    <title>mouse events</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!-- onclick -->
+    <button onclick="alert('onClick event triggered');">onclick</button>
+    <button onclick="console.log('onClick event triggered');">onclick2</button>
+
+    <!-- onmouseover -->
+    <button onmouseover="alert('onmouseover event triggered');">onmouseover</button>
+    <button onmouseout="alert('onmouseout event triggered');">onmouseout</button>
+
+    <button onclick="message();">onclick message</button>
+
+    <button id="smsBtn">SMS_btn</button>
+
+    <!-- mouseDown & mouseUp -->
+    <div class="mainDiv">
+        <p id="myP" onmousedown="mousedown()" onmouseup="mouseup()">Click, the mousedown() is triggered when the mouse button is pressed down over</p>
+    </div>
+
+    <!-- mouseEnter & mouseLeave -->
+    <div class="mainDiv2">
+        <div id="box">
+
+        </div>
+    </div>
+
+    <script>
+        // mouseDown & mouseUp
+        function mousedown(){
+            document.getElementById("myP").style.color = "#F8B627";
+        }
+        function mouseup(){
+            document.getElementById("myP").style.color = "green";
+        }
+
+        // mouseEnter &  mouseLeave
+        const mEnter = document.getElementById("box");
+        mEnter.addEventListener("mousedown", () => {
+            mEnter.style.backgroundColor = "blue";
+        });
+        mEnter.addEventListener("mouseup", () => {
+            mEnter.style.backgroundColor = "green";
+        });
+
+    //use of eventlistener - no need set in html dom onclick
+    //step 01: select
+    //step 02: addeventlistener
+    //step 03: define function
+    document.getElementById("smsBtn").addEventListener("click", smsClick);
+
+    function smsClick(){
+    console.log("sms cliked");
+    }
+  
+    </script>
+</body>
+</html>

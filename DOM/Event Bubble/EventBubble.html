@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event_bubble</title>
+     <!-- skeleton cdn -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"/>
+</head>
+<body>
+    
+<div id="mid-container" class="container">
+    <h3>Event Bubble Practice</h3>
+    <h5>My Lists:</h5>
+    <ul id="myList">
+        <li id="first" class="item">Item one</li>
+        <li class="item">Item two</li>
+        <li class="item">Item three</li>
+        <li class="item">Item four</li>
+        <li class="item">Item five</li>
+    </ul>
+</div>
+
+
+<script>
+//Event bubbling
+document.getElementById("first").addEventListener("click", function(e){
+console.log("first item clicked");
+e.stopPropagation();
+});
+
+document.getElementById("mid-container").addEventListener("click", function(e){
+console.log("container clicked");
+});
+
+document.getElementById("myList").addEventListener("click", function (){
+    console.log("ul clicked");
+});
+</script>
+
+</body>
+</html>
+
+<!-- 
+event.stopPropagation(); - for stop bubbling
+event.stopImmediatePropagation - for stop bubbling with inner element
+-->

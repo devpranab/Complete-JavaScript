@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bordedApi</title>
+</head>
+<body>
+    <span>reload this page to find task</span>
+    <h1 id="activity"></h1>
+    <h3>Learn from: <a id="explore_link" href="">Visit this place</a></h3>
+
+    <script>
+function findTask(){
+    fetch("http://www.boredapi.com/api/activity/")
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            document.getElementById("activity").innerText = data.activity;
+        })
+}
+findTask();
+
+setInterval(() => { //call after 1.5s
+findTask();
+},1500)
+        
+    </script>
+    
+</body>
+</html>

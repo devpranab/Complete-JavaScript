@@ -1,0 +1,35 @@
+Revisit JavaScript
+  1. What important to beginners and what not
+  2. Variable - name when to declare etc.
+Things you will need absolute to go to JavaScript
+  1. How to learn JavaScript
+  2. Variable
+      a. Variable types
+      b. Condition
+      c. Array
+      d. Loop(For, While)
+      e. Function
+      f. Object
+3. Problem solving - just see how things will work
+4. Good to know - vanila js or interview or just understand core part
+      a. Switch
+      b. DOM, nodelist, nodetype
+      c. Selector
+      d. appendChild
+      e. addEventListener
+5. Will be advanced for interview or better developer
+      a. Callback function
+      b. Event bubble
+6. Future modules
+      a. Map
+      b. Not necessary
+          i. Bind-Call-Apply
+          ii. 
+Event, event type(mouse, keyboard, page loading, browser)
+4 ways to add event handler to an element.
+
+  - meaningful name
+  - return keyword
+  - 
+
+5 things - (Variable, Condition, Array, Loop, Function, Object)
